@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо за заявку — ДИРЕКТ.PRO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Extra particles on thanks page */
+  .thanks-bg {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,69,0,0.07) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .thanks-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,69,0,0.12);
+    animation: ring-expand 3s ease-out infinite;
+    pointer-events: none;
+  }
+  .thanks-ring:nth-child(1) { width: 320px; height: 320px; top: 50%; left: 50%; margin: -160px; animation-delay: 0s; }
+  .thanks-ring:nth-child(2) { width: 500px; height: 500px; top: 50%; left: 50%; margin: -250px; animation-delay: 0.8s; }
+  .thanks-ring:nth-child(3) { width: 700px; height: 700px; top: 50%; left: 50%; margin: -350px; animation-delay: 1.6s; }
+  @keyframes ring-expand {
+    0%   { opacity: 0.5; transform: scale(0.85); }
+    100% { opacity: 0;   transform: scale(1.1); }
+  }
+  .steps-mini {
+    display: flex; align-items: center; gap: 1rem;
+    justify-content: center; margin: 1.8rem 0 0;
+    flex-wrap: wrap;
+  }
+  .step-mini {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.82rem; color: var(--text2);
+  }
+  .step-mini-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(255,69,0,0.12);
+    border: 1px solid rgba(255,69,0,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-mini-sep { color: rgba(255,255,255,0.12); font-size: 0.8rem; }
+  .contact-mini {
+    display: flex; align-items: center; gap: 0.8rem;
+    justify-content: center; margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .contact-mini a {
+    color: var(--text2); font-size: 0.82rem; text-decoration: none;
+    border: 1px solid var(--border); border-radius: 20px;
+    padding: 0.35rem 1rem;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .contact-mini a:hover { border-color: rgba(255,69,0,0.4); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo" data-text="ДИРЕКТ.PRO">ДИРЕКТ<span>.</span>PRO</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Обо мне</a></li>
+    <li><a href="index.html#services">Услуги</a></li>
+    <li><a href="index.html#pricing">Цены</a></li>
+    <li><a href="index.html#contacts">Контакты</a></li>
+  </ul>
+  <a href="index.html#contacts" class="nav-cta">Контакты</a>
+</nav>
+
+<div class="thanks-bg"></div>
+
+<div class="thanks-wrap">
+  <div class="thanks-ring"></div>
+  <div class="thanks-ring"></div>
+  <div class="thanks-ring"></div>
+
+  <div class="thanks-card">
+
+    <!-- Animated checkmark SVG -->
+    <svg class="thanks-svg" width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle
+        cx="43" cy="43" r="38"
+        stroke="#FF4500" stroke-width="2.5"
+        stroke-dasharray="239" stroke-dashoffset="239"
+        style="animation: draw-circle 0.85s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;"
+      />
+      <path
+        d="M26 43 L38 56 L60 30"
+        stroke="#FF4500" stroke-width="2.8"
+        stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="58" stroke-dashoffset="58"
+        style="animation: draw-check 0.55s cubic-bezier(0.4,0,0.2,1) 0.9s forwards;"
+      />
+    </svg>
+
+    <h1 class="thanks-title">
+      Заявка<br><span style="color:var(--accent)">получена!</span>
+    </h1>
+
+    <p class="thanks-sub">
+      Спасибо, что обратились! Я — <span class="thanks-name">Владислав</span> —
+      уже вижу вашу заявку и свяжусь с вами в течение нескольких часов.<br><br>
+      Пока жду — прочитаю о вашем бизнесе, чтобы прийти на разговор подготовленным.
+    </p>
+
+    <div class="steps-mini">
+      <div class="step-mini">
+        <div class="step-mini-num">1</div>
+        <span>Заявка получена</span>
+      </div>
+      <span class="step-mini-sep">→</span>
+      <div class="step-mini">
+        <div class="step-mini-num">2</div>
+        <span>Свяжусь с вами</span>
+      </div>
+      <span class="step-mini-sep">→</span>
+      <div class="step-mini">
+        <div class="step-mini-num">3</div>
+        <span>Обсудим проект</span>
+      </div>
+    </div>
+
+    <div class="contact-mini">
+      <a href="https://t.me/I5una" target="_blank">Telegram @I5una</a>
+      <a href="https://vk.com/kotortot" target="_blank">ВКонтакте</a>
+      <a href="tel:+79026670604">+7 (902) 667-06-04</a>
+    </div>
+
+    <br><br>
+    <a href="index.html" class="btn-back">
+      ← Вернуться на сайт
+    </a>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
