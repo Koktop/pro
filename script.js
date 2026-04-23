@@ -183,8 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const json = await res.json();
 
         if (json.success) {
-          window.location.href = 'thanks.html';
-        } else {
+  ym(108716311, 'reachGoal', 'form_submit');
+  window.location.href = 'thanks.html';
+} else {
           throw new Error('fail');
         }
       } catch {
