@@ -196,5 +196,53 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+   
+   setTimeout(function() {
+  ym(108716311, 'reachGoal', 'time_60sec');
+}, 60000);
+   var timeSpent = 0;
+var timer = setInterval(function() {
+  if (!document.hidden) {
+    timeSpent += 1;
+    if (timeSpent >= 60) {
+      ym(108716311, 'reachGoal', 'time_60sec');
+      clearInterval(timer);
+    }
+  }
+}, 1000);
+
+   var pricingReached = false;
+var contactsReached = false;
+
+var scrollObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+
+      if (entry.target.id === 'pricing' && !pricingReached) {
+        pricingReached = true;
+        ym(108716311, 'reachGoal', 'scroll_pricing');
+        scrollObs.unobserve(entry.target);
+      }
+
+      if (entry.target.id === 'contacts' && !contactsReached) {
+        contactsReached = true;
+        ym(108716311, 'reachGoal', 'scroll_contacts');
+        scrollObs.unobserve(entry.target);
+      }
+
+    }
+  });
+}, { threshold: 0.3 });
+
+var pricingEl  = document.getElementById('pricing');
+var contactsEl = document.getElementById('contacts');
+if (pricingEl)  scrollObs.observe(pricingEl);
+if (contactsEl) scrollObs.observe(contactsEl);
+
+   document.querySelectorAll('a.btn-primary').forEach(function(el) {
+  el.addEventListener('click', function() {
+    ym(108716311, 'reachGoal', 'click_hero_cta');
+  });
+});
 
 });
